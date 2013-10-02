@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Language: Abkhaz
+Language code: abk
+Author: Safiyyah Saleem
+Date: May 1 2009
+Source a: Abkhaz by Viacheslav A. Chirkba
+
+#Ex 1 demonstrates the standard SOV word order
+Source: a:60
+Vetted: s
+Judgment: g
+Phenomena: word order
+at͡ʂʰkʷʰən atəpha dəjəbajt
+a-t͡ʂʰkʷʰən a-təpha də-jə-ba-jt
+the-boy the-girl her-he-see-dynamic.finite
+The boy saw the girl.
+
+#Ex 30 demonstrates negation.  The present tense is negated by adding the suffix "-m" after the tense marker.  The dynamic/finite marker does not appear on the verb.
+Source: author
+Vetted: f
+Judgment: g
+Phenomena: neg
+at͡ʂʰkʷʰən atəpha dəjəbawam
+a-t͡ʂʰkʷʰən a-təpha də-jə-ba-wa-m
+the-boy the-girl her-he-see-neg
+The boy does not see the girl.
+-->
+<xigt-corpus>
+  <metadata type="xigt-meta">
+    <meta type="language" name="Abkhaz" iso-639-3="abk"
+          tiers="phrases words morphemes"/>
+    <meta type="language" name="English" iso-639-3="eng"
+          tiers="glosses translations"/>
+    <meta type="date">May 1 2009</meta>
+    <meta type="author">Safiyyah Saleem</meta>
+    <meta type="source" id="src-a">Abkhaz by Viacheslav A. Chirkba</meta>
+    <meta type="source" id="src-b">Safiyyah Saleem</meta>
+  </metadata>
+  <igt id="i1">
+    <metadata type="xigt-meta">
+      <meta type="source" ref="src-a" page="60"/>
+      <meta type="vetted" value="s"/>
+      <meta type="judgment" value="g"/>
+      <meta type="phenomena">
+        <phenomenon>word order</phenomenon>
+      </meta>
+      <meta type="comment">Ex 1 demonstrates the standard SOV word order</meta>
+    </metadata>
+    <tier type="phrases" id="p">
+      <item id="p1">at͡ʂʰkʷʰən atəpha dəjəbajt</item>
+    </tier>
+    <tier type="words" id="w" ref="p">
+      <item id="w1" ref="p1[0:9]"/>
+      <item id="w2" ref="p1[10:16]"/>
+      <item id="w3" ref="p1[17:25]"/>
+    </tier>
+    <tier type="morphemes" id="m" ref="w">
+      <item id="w1m1" ref="w1[0:1]"/>
+      <item id="w1m2" ref="w1[1:9]"/>
+      <item id="w2m1" ref="w2[0:1]"/>
+      <item id="w2m2" ref="w2[1:6]"/>
+      <item id="w3m1" ref="w3[0:2]"/>
+      <item id="w3m2" ref="w3[2:4]"/>
+      <item id="w3m3" ref="w3[4:6]"/>
+      <item id="w3m4" ref="w3[6:8]"/>
+    </tier>
+    <tier type="glosses" id="g" ref="m">
+      <item id="w1m1g" ref="w1m1">the</item>
+      <item id="w1m2g" ref="w1m2">boy</item>
+      <item id="w2m1g" ref="w2m1">the</item>
+      <item id="w2m2g" ref="w2m2">girl</item>
+      <item id="w3m1g" ref="w3m1">her</item>
+      <item id="w3m2g" ref="w3m2">he</item>
+      <item id="w3m3g" ref="w3m3">see</item>
+      <item id="w3m4g1" ref="w3m4">DYN</item>
+      <item id="w3m4g2" ref="w3m4">FIN</item>
+    </tier>
+    <tier type="syntax" id="x" ref="w">
+      <item id="x1" ref="w1">NP-SBJ</item>
+      <item id="x2" ref="w2">NP-OBJ</item>
+      <item id="x3" ref="w3">VBD</item>
+      <item id="x4" synref="x2,x3">VP</item>
+      <item id="x5" synref="x1,x4">S</item>
+    </tier>
+    <tier type="translations" ref="p" id="t">
+      <item id="t1" ref="p1">The boy saw the girl.</item>
+    </tier>
+  </igt>
+  <igt id="i30">
+    <metadata type="xigt-meta">
+      <meta type="source" ref="src-b"/>
+      <meta type="vetted" value="f"/>
+      <meta type="judgment" value="g"/>
+      <meta type="phenomena">
+        <phenomenon>neg</phenomenon>
+      </meta>
+      <meta type="comment">Ex 30 demonstrates negation.  The present tense is negated by adding the suffix "-m" after the tense marker.  The dynamic/finite marker does not appear on the verb.</meta>
+    </metadata>
+    <tier type="phrases" id="p">
+      <item id="p1">at͡ʂʰkʷʰən atəpha dəjəbawam</item>
+    </tier>
+    <tier type="words" id="w" ref="p">
+      <item id="w1" ref="p1[0:9]"/>
+      <item id="w2" ref="p1[10:16]"/>
+      <item id="w3" ref="p1[17:26]"/>
+    </tier>
+    <tier type="morphemes" id="m" ref="w">
+      <item id="w1m1" ref="w1[0:1]"/>
+      <item id="w1m2" ref="w1[1:9]"/>
+      <item id="w2m1" ref="w2[0:1]"/>
+      <item id="w2m2" ref="w2[1:6]"/>
+      <item id="w3m1" ref="w3[0:2]"/>
+      <item id="w3m2" ref="w3[2:4]"/>
+      <item id="w3m3" ref="w3[4:6]"/>
+      <item id="w3m4" ref="w3[6:8]"/>
+      <item id="w3m5" ref="w3[8:9]"/>
+    </tier>
+    <tier type="glosses" id="g" ref="m">
+      <item id="w1m1g" ref="w1m1">the</item>
+      <item id="w1m2g" ref="w1m2">boy</item>
+      <item id="w2m1g" ref="w2m1">the</item>
+      <item id="w2m2g" ref="w2m2">girl</item>
+      <item id="w3m1g" ref="w3m1">her</item>
+      <item id="w3m2g" ref="w3m2">he</item>
+      <item id="w3m3g" ref="w3m3">see</item>
+      <item id="w3m4g" ref="w3m4">PRS</item>
+      <item id="w3m5g" ref="w3m5">NEG</item>
+    </tier>
+    <tier type="syntax" id="x" ref="w">
+      <item id="x1" ref="w1">NP-SBJ</item>
+      <item id="x2" ref="w2">NP-OBJ</item>
+      <item id="x3" ref="w3">VBZ</item>
+      <item id="x4" synref="x2,x3">VP</item>
+      <item id="x5" synref="x1,x4">S</item>
+    </tier>
+    <tier type="translations" id="t" ref="p">
+      <item id="t1" ref="p1">The boy does not see the girl.</item>
+    </tier>
+  </igt>
+</xigt-corpus>

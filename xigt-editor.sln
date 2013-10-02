@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xigt-editor", "xigt-editor\xigt-editor.csproj", "{A1C57D3B-DF38-4BEA-B308-BAD90566F0EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xigt-xaml", "xigt-xaml\xigt-xaml.csproj", "{A4097298-E9E6-4A44-A3A0-8E7BEE2015DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample-files", "sample-files", "{3070CC5B-8937-431E-BF6D-D1255660C9E9}"
+	ProjectSection(SolutionItems) = preProject
+		sample-files\abkhaz.xml = sample-files\abkhaz.xml
+		sample-files\kor-minimal.xml = sample-files\kor-minimal.xml
+		sample-files\kor-simple.xml = sample-files\kor-simple.xml
+		sample-files\kor.xml = sample-files\kor.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xigt", "xigt\xigt.csproj", "{3C343149-90A5-4313-987E-6A1DB16B56DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1C57D3B-DF38-4BEA-B308-BAD90566F0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C57D3B-DF38-4BEA-B308-BAD90566F0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C57D3B-DF38-4BEA-B308-BAD90566F0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C57D3B-DF38-4BEA-B308-BAD90566F0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4097298-E9E6-4A44-A3A0-8E7BEE2015DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4097298-E9E6-4A44-A3A0-8E7BEE2015DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4097298-E9E6-4A44-A3A0-8E7BEE2015DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4097298-E9E6-4A44-A3A0-8E7BEE2015DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C343149-90A5-4313-987E-6A1DB16B56DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C343149-90A5-4313-987E-6A1DB16B56DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C343149-90A5-4313-987E-6A1DB16B56DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C343149-90A5-4313-987E-6A1DB16B56DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
