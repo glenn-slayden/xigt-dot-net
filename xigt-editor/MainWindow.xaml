@@ -1,8 +1,41 @@
 ﻿<Window x:Class="xigt_editor.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="XIGT Editor" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        xmlns:local="clr-namespace:xigt_editor"
+        x:Name="w_root"
+        Title="XIGT Editor">
+
+    <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" LastChildFill="True">
+        <Menu DockPanel.Dock="Top" >
+            <Menu.LayoutTransform>
+                <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+            </Menu.LayoutTransform>
+            <MenuItem Header="File">
+                <MenuItem Header="Open Xigt Corpus..." />
+                <MenuItem Header="Close" />
+                <MenuItem Header="Exit" />
+            </MenuItem>
+            <MenuItem Header="Options">
+                <MenuItem Header="Fonts..." />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Text Display" />
+                <MenuItem Header="Editing" />
+                <MenuItem Header="Xigt" />
+                <MenuItem Header="Corpus Navigation" />
+            </MenuItem>
+        </Menu>
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
+            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
+            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
+        </StackPanel>
+
+        <local:igt_control x:Name="w_igt"  DockPanel.Dock="Top" Margin="0 10 0 0" FontSize="18">
+
+        </local:igt_control>
+
+
+    </DockPanel>
 </Window>

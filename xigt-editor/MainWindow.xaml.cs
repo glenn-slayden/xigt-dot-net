@@ -30,12 +30,24 @@ namespace xigt_editor
 
 		void MainWindow_Loaded(object sender, RoutedEventArgs e)
 		{
-
 			var xcorpus = xigt.xaml.Runtime.Load(@"sample-files\kor.xml");
 
 			var corpus = XigtCorpus.Create(xcorpus);
 
-			Nop.X();
+			var igt = corpus.Igts[0];
+
+			w_igt.Igt = igt;
+		}
+
+		protected override void OnKeyDown(KeyEventArgs e)
+		{
+			if (e.Key == Key.Escape)
+			{
+				Close();
+				e.Handled = true;
+			}
+			else
+				base.OnKeyDown(e);
 		}
 	};
 }

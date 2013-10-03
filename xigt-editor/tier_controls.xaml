@@ -1,0 +1,48 @@
+﻿<Grid x:Class="xigt_editor.tier_controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        Background="Beige"
+        TextBlock.FontSize="17">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <ToggleButton x:Name="w_orientation" Grid.Column="0" VerticalAlignment="Center" Margin="10 0 2 0" Click="ToggleButton_Click_1" >
+        <ToggleButton.Template>
+            <ControlTemplate>
+                <StackPanel>
+                    <Image Name="img" Width="15" Height="15" Source="png/3(three)rows_9713.png"/>
+                </StackPanel>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="ToggleButton.IsChecked" Value="True">
+                        <Setter TargetName="img" Property="Source" Value="png/3(three)columns_9714.png"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </ToggleButton.Template>
+    </ToggleButton>
+
+    <ToggleButton Grid.Column="1" VerticalAlignment="Center" Margin="2 0 2 0" >
+        <ToggleButton.Template>
+            <ControlTemplate>
+                <StackPanel>
+                    <Image Name="img" Width="15" Height="15" Source="png/3(three)rows_9713.png"/>
+                </StackPanel>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="ToggleButton.IsChecked" Value="True">
+                        <Setter TargetName="img" Property="Source" Value="png/3(three)columns_9714.png"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </ToggleButton.Template>
+    </ToggleButton>
+
+    <TextBlock x:Name="w_type" Grid.Column="2" Margin="2 0 2 0">glosses</TextBlock>
+
+</Grid>
