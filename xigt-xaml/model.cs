@@ -38,7 +38,7 @@ namespace xigt.xaml
 			else if (item is metadata)
 				metadatas.Add((metadata)item);
 			else
-				throw not.impl;
+				throw new NotImplementedException();
 		}
 		IEnumerator<Icorpus_item> IEnumerable<Icorpus_item>.GetEnumerator()
 		{
@@ -99,7 +99,7 @@ namespace xigt.xaml
 			else if (item is metadata)
 				metadatas.Add((metadata)item);
 			else
-				throw not.impl;
+				throw new NotImplementedException();
 		}
 		IEnumerator<tier> IEnumerable<tier>.GetEnumerator() { return tiers.GetEnumerator(); }
 		IEnumerator IEnumerable.GetEnumerator() { return ((IEnumerable<tier>)this).GetEnumerator(); }
@@ -149,7 +149,7 @@ namespace xigt.xaml
 			else if (item is metadata)
 				metadatas.Add((metadata)item);
 			else
-				throw not.impl;
+				throw new NotImplementedException();
 		}
 		IEnumerator<item> IEnumerable<item>.GetEnumerator() { return items.GetEnumerator(); }
 		IEnumerator IEnumerable.GetEnumerator() { return ((IEnumerable<item>)this).GetEnumerator(); }

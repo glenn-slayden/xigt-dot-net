@@ -60,7 +60,7 @@
       <DependentUpon>igt_control.xaml</DependentUpon>
     </Compile>
     <Compile Include="ui_tier.cs" />
-    <Compile Include="util.cs" />
+    <Compile Include="ui-util.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

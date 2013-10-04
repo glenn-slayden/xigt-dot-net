@@ -42,6 +42,7 @@
     <Compile Include="model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ref-expr.cs" />
+    <Compile Include="util.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xigt-xaml\xigt-xaml.csproj">

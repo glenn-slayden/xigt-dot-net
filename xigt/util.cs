@@ -1,8 +1,26 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public static class _ext
+{
+	public static void ForEach(this IEnumerable seq, Action<Object> a)
+	{
+		var e = seq.GetEnumerator();
+		while (e.MoveNext())
+			a(e.Current);
+	}
+};
 
 
 public static class Nop
@@ -30,4 +48,3 @@ public static class arr
 		return dst;
 	}
 }
-

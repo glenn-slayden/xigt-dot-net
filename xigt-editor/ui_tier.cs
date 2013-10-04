@@ -167,43 +167,33 @@ namespace xigt_editor
 				ColumnDefinitions.Clear();
 				RowDefinitions.Clear();
 
+				DependencyProperty pts;
+
 				if (uii.Orientation == Orientation.Horizontal)
 				{
-					for (int i = 0; i < items.Count; i++)
-					{
-						this.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-
-						var bb = new Border
-						{
-							BorderBrush = uii.BorderBrush,
-							BorderThickness = new Thickness(b_thick, b_thick, 0, 0),
-							Child = new TextBlock
-							{
-								Text = items[i].ToString().Replace(' ', '_'),
-							}
-						};
-						Grid.SetColumn(bb, i);
-						this.Children.Add(bb);
-					}
+					items.ForEach(_ => ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto }));
+					pts = Grid.ColumnProperty;
 				}
 				else
 				{
-					for (int i = 0; i < items.Count; i++)
-					{
-						this.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+					items.ForEach(_ => RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto }));
+					pts = Grid.RowProperty;
+				}
 
-						var bb = new Border
+				for (int i = 0; i < items.Count; i++)
+				{
+					var bb = new Border
+					{
+						BorderBrush = uii.BorderBrush,
+						BorderThickness = new Thickness(b_thick, b_thick, 0, 0),
+						Child = new TextBlock
 						{
-							BorderBrush = uii.BorderBrush,
-							BorderThickness = new Thickness(b_thick, b_thick, 0, 0),
-							Child = new TextBlock
-							{
-								Text = items[i].ToString().Replace(' ', '_'),
-							}
-						};
-						Grid.SetRow(bb, i);
-						this.Children.Add(bb);
-					}
+							Text = items[i].Content.Replace(' ', '_'),
+						}
+					};
+
+					bb.SetValue(pts, i);
+					this.Children.Add(bb);
 				}
 			}
 		}
