@@ -19,7 +19,9 @@ namespace xigt.xaml
 
 			XamlServices.Transform(xr, xw);
 
-			return (xigtcorpus)xw.Result;
+			var xc = (xigtcorpus)xw.Result;
+
+			return xc;
 		}
 	};
 }

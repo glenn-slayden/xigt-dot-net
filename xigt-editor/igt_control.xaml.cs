@@ -18,10 +18,10 @@ using xigt;
 
 namespace xigt_editor
 {
-	public partial class igt_control : ListBox
+	public partial class xigt_control : Grid
 	{
 		public static readonly DependencyProperty IgtProperty =
-			DependencyProperty.Register("Igt", typeof(Igt), typeof(igt_control), new FrameworkPropertyMetadata((o, e) => ((igt_control)o).igt_change()));
+			DependencyProperty.Register("Igt", typeof(Igt), typeof(xigt_control), new FrameworkPropertyMetadata((o, e) => ((xigt_control)o).igt_change()));
 
 		public Igt Igt
 		{
@@ -29,14 +29,14 @@ namespace xigt_editor
 			set { SetValue(IgtProperty, value); }
 		}
 
-		public igt_control()
+		public xigt_control()
 		{
 			InitializeComponent();
 		}
 
 		void igt_change()
 		{
-			this.Items.Clear();
+			w_lb.Items.Clear();
 
 			var mb = new MultiBinding
 			{
@@ -52,14 +52,14 @@ namespace xigt_editor
 					Source = uit.uts.tcx,
 					Path = new PropertyPath(FrameworkElement.ActualWidthProperty),
 				});
-				this.Items.Add(uit);
+				w_lb.Items.Add(uit);
 			}
 
-			foreach (ui_tier uit in this.Items)
+			foreach (ui_tier uit in w_lb.Items)
 				BindingOperations.SetBinding(uit, ui_tier.TierControlsWidthProperty, mb);
 
-			this.SelectedIndex = 0;
-			((UIElement)this.SelectedItem).Focus();
+			w_lb.SelectedIndex = 0;
+			((UIElement)w_lb.SelectedItem).Focus();
 		}
 	};
 }

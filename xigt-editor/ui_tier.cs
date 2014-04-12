@@ -22,45 +22,6 @@ namespace xigt_editor
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public class ui_tier : ListBoxItem
-	{
-		public static readonly DependencyProperty TierProperty =
-			DependencyProperty.Register("Tier", typeof(Tier), typeof(ui_tier), new FrameworkPropertyMetadata((o, e) => ((ui_tier)o).tier_change()));
-
-		public Tier Tier
-		{
-			get { return (Tier)GetValue(TierProperty); }
-			set { SetValue(TierProperty, value); }
-		}
-
-		public static readonly DependencyProperty TierControlsWidthProperty =
-			DependencyProperty.Register("TierControlsWidth", typeof(Double), typeof(ui_tier));
-
-		public Double TierControlsWidth
-		{
-			get { return (Double)GetValue(TierControlsWidthProperty); }
-			set { SetValue(TierControlsWidthProperty, value); }
-		}
-
-		public ui_tier(igt_control igtc)
-		{
-			this.igtc = igtc;
-			this.Padding = new Thickness(1);
-		}
-
-		public readonly igt_control igtc;
-
-		void tier_change()
-		{
-			this.Content = new ui_tier_shell(this);
-		}
-
-		public ui_tier_shell uts { get { return (ui_tier_shell)Content; } }
-	};
-
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/// 
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public class ui_tier_shell : Grid
 	{
 		public static readonly DependencyProperty OrientationProperty = StackPanel.OrientationProperty;
@@ -110,6 +71,46 @@ namespace xigt_editor
 		readonly public tier_controls tcx;
 
 		public Tier Tier { get { return uit.Tier; } }
+	};
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// 
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public class ui_tier : ListBoxItem
+	{
+		public static readonly DependencyProperty TierProperty =
+			DependencyProperty.Register("Tier", typeof(Tier), typeof(ui_tier), new FrameworkPropertyMetadata((o, e) => ((ui_tier)o).tier_change()));
+
+		public Tier Tier
+		{
+			get { return (Tier)GetValue(TierProperty); }
+			set { SetValue(TierProperty, value); }
+		}
+
+		public static readonly DependencyProperty TierControlsWidthProperty =
+			DependencyProperty.Register("TierControlsWidth", typeof(Double), typeof(ui_tier));
+
+		public Double TierControlsWidth
+		{
+			get { return (Double)GetValue(TierControlsWidthProperty); }
+			set { SetValue(TierControlsWidthProperty, value); }
+		}
+
+		public ui_tier(xigt_control igtc)
+		{
+			this.igtc = igtc;
+			this.Padding = new Thickness(1);
+		}
+
+		public readonly xigt_control igtc;
+
+		void tier_change()
+		{
+			this.Content = new ui_tier_shell(this);
+		}
+
+		public ui_tier_shell uts { get { return (ui_tier_shell)Content; } }
 	};
 
 
@@ -188,7 +189,7 @@ namespace xigt_editor
 						BorderThickness = new Thickness(b_thick, b_thick, 0, 0),
 						Child = new TextBlock
 						{
-							Text = items[i].Content.Replace(' ', '_'),
+							Text = items[i].Content//.Replace(' ', '_'),
 						}
 					};
 

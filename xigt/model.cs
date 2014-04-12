@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,8 +141,13 @@ namespace xigt
 			this.AnnotationRefKey = annotref ?? "ref";
 			this.AlignmentMethod = "auto";
 
-			this._igts = new List<Igt>();
-			this._mdx = new List<Metadata>();
+			this._igts = new ObservableCollection<Igt>();
+			this._mdx = new ObservableCollection<Metadata>();
+		}
+
+		public XigtCorpus()
+			: this(null, null, null)
+		{
 		}
 
 		void load_1(xigtcorpus xcorp)
@@ -183,10 +189,10 @@ namespace xigt
 			set { this["alignment-method"] = value; }
 		}
 
-		readonly List<Igt> _igts;
+		readonly ObservableCollection<Igt> _igts;
 		public IList<Igt> Igts { get { return _igts; } }
 
-		readonly List<Metadata> _mdx;
+		readonly ObservableCollection<Metadata> _mdx;
 		public IList<Metadata> Metadatas { get { return _mdx; } }
 
 		public override string ToString()

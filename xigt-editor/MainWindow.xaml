@@ -3,15 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:xigt_editor"
         x:Name="w_root"
+        ResizeMode="CanResizeWithGrip"
         Title="XIGT Editor">
 
-    <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" LastChildFill="True">
-        <Menu DockPanel.Dock="Top" >
-            <Menu.LayoutTransform>
+    <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" LastChildFill="True" Background="Azure">
+        <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+            <!--<Menu.LayoutTransform>
                 <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
-            </Menu.LayoutTransform>
+            </Menu.LayoutTransform>-->
             <MenuItem Header="File">
-                <MenuItem Header="Open Xigt Corpus..." />
+                <MenuItem Header="Open Xigt File..." Click="Menu_FileOpen" />
                 <MenuItem Header="Close" />
                 <MenuItem Header="Exit" />
             </MenuItem>
@@ -19,23 +20,22 @@
                 <MenuItem Header="Fonts..." />
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Text Display" />
-                <MenuItem Header="Editing" />
-                <MenuItem Header="Xigt" />
-                <MenuItem Header="Corpus Navigation" />
+                <MenuItem IsCheckable="True" IsChecked="True"  x:Name="m_items" Header="Items list"      />
+                <Separator />
+                <MenuItem IsCheckable="True" IsChecked="True"  x:Name="m_render" Header="Rendered Igt"   />
+                <MenuItem IsCheckable="True" IsChecked="True" x:Name="m_xigt" Header="Xigt"             />
+                <MenuItem IsCheckable="True" IsChecked="True"  x:Name="m_nav" Header="Navigation"        />
+                <MenuItem IsCheckable="True" IsChecked="True" x:Name="m_xml" Header="Xml"               />
             </MenuItem>
         </Menu>
 
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
-            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
-            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
-            <Button Height="28" Width="78" Margin="15 5 5 5"></Button>
-        </StackPanel>
+        <StatusBar x:Name="w_status" DockPanel.Dock="Bottom">
+            <StatusBarItem>Ready</StatusBarItem>
+            <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            <StatusBarItem></StatusBarItem>
+        </StatusBar>
 
-        <local:igt_control x:Name="w_igt"  DockPanel.Dock="Top" Margin="0 10 0 0" FontSize="18">
-
-        </local:igt_control>
-
+        <local:xigt_corpus_control x:Name="w_content" XigtCorpus="{Binding XigtCorpus}" />
 
     </DockPanel>
 </Window>

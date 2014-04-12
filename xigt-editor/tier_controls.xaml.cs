@@ -30,6 +30,7 @@ namespace xigt_editor
 			this.uts = uts;
 
 			w_type.Text = Tier.Type;
+			w_id.Text = Tier.Id;
 		}
 		readonly ui_tier_shell uts;
 

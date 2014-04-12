@@ -1,0 +1,78 @@
+﻿<Grid x:Class="xigt_editor.xigt_corpus_control"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:xigt_editor"
+        mc:Ignorable="d" 
+        d:DesignHeight="263"
+        d:DesignWidth="560"
+       TextBlock.FontSize="15">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="3" />
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <ListBox x:Name="w_items" Grid.Column="0" 
+             ItemsSource="{Binding Igts}" 
+             MinWidth="100"
+             BorderThickness="0" 
+             BorderBrush="{x:Null}" />
+
+    <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" Background="LightGray" />
+
+    <Grid Grid.Column="2" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <Border x:Name="render_pane" Grid.Row="0" 
+                BorderBrush="Gray" 
+                BorderThickness="0 0 0 1">
+            <TextBlock Padding="3" 
+                       FontFamily="Charis SIL"
+                       FontSize="17"
+                       Background="White">
+                <TextBlock.Inlines>
+                    <Run>1 Nay-ka ai-eykey pap-ul mek-i-ess-ta</Run>
+                    <LineBreak />
+                    <Run>I-Nom child-Dat rice-Acc eat-Caus-Pst-Dec</Run>
+                    <LineBreak />
+                    <Run>`I made the child eat rice.'</Run>
+                </TextBlock.Inlines>
+            </TextBlock>
+        </Border>
+
+        <local:xigt_control x:Name="xigt_pane" Grid.Row="1" Igt="{Binding ElementName=w_items, Path=SelectedItem}" />
+
+        <Border x:Name="nav_pane" Grid.Row="2" 
+                BorderBrush="LightGray" 
+                BorderThickness="0 1 0 0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <Button Height="28" Width="78" Margin="15 5 5 5" Click="nav_Prev">prev</Button>
+                <!--<Button Height="28" Width="78" Margin="15 5 5 5"></Button>-->
+                <Button Height="28" Width="78" Margin="15 5 5 5" Click="nav_Next">next</Button>
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="xml_pane" Grid.Row="3" BorderBrush="LightGray" BorderThickness="0 1 0 0">
+            <TextBox x:Name="w_xml" 
+                       Padding="3" 
+                       Height="Auto"
+                       TextWrapping="NoWrap"
+                     VerticalScrollBarVisibility="Auto"
+                     FontFamily="Consolas"
+                     >
+            </TextBox>
+        </Border>
+
+    </Grid>
+
+</Grid>

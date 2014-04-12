@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="igt_corpus.xaml.cs">
+      <DependentUpon>igt_corpus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tier_controls.xaml.cs">
       <DependentUpon>tier_controls.xaml</DependentUpon>
     </Compile>
@@ -61,6 +64,10 @@
     </Compile>
     <Compile Include="ui_tier.cs" />
     <Compile Include="ui-util.cs" />
+    <Page Include="igt_corpus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +117,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="png\3%28three%29columns_9714.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="png\3%28three%29rows_9713.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\xigt-xaml\xigt-xaml.csproj">
       <Project>{a4097298-e9e6-4a44-a3a0-8e7bee2015df}</Project>
       <Name>xigt-xaml</Name>
@@ -118,12 +131,6 @@
       <Project>{3c343149-90a5-4313-987e-6a1db16b56dd}</Project>
       <Name>xigt</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="png\3%28three%29columns_9714.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="png\3%28three%29rows_9713.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
